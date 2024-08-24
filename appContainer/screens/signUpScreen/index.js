@@ -8,9 +8,14 @@ import {
   Dimensions,
 } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
+import CustomTextInput from "../../components/navigators/commonComponent/CustomTextInput";
 const windowWidth = Dimensions.get("window").width;
 
 export default function SignUpScreen() {
+  const [fullName, setFullName] = React.useState("");
+  const [email, setEmail] = React.useState("");
+  const [password, setPassword] = React.useState("");
+  const [confirmPassword, setConfirmPassword] = React.useState("");
   return (
     <View style={styles.container}>
       {/* Sign In Header */}
@@ -19,35 +24,33 @@ export default function SignUpScreen() {
       </Text>
       <Text style={styles.subHeader}>Blend the queue & Automate learning.</Text>
 
-      {/* Email Input */}
-      <TextInput
-        style={styles.input}
+      <CustomTextInput
         placeholder="Full Name"
-        placeholderTextColor="#A9A9A9"
-        keyboardType="email-address"
+        value={fullName}
+        onChangeText={(text) => setFullName(text)}
       />
       {/* Email Input */}
-      <TextInput
-        style={styles.input}
+      <CustomTextInput
         placeholder="Contact@gmail.com"
-        placeholderTextColor="#A9A9A9"
         keyboardType="email-address"
+        value={email}
+        onChangeText={(text) => setEmail(text)}
       />
 
       {/* Password Input */}
-      <TextInput
-        style={styles.input}
+      <CustomTextInput
         placeholder="Password"
-        placeholderTextColor="#A9A9A9"
         secureTextEntry={true}
+        value={password}
+        onChangeText={(text) => setPassword(text)}
       />
 
       {/* Password Input */}
-      <TextInput
-        style={styles.input}
+      <CustomTextInput
         placeholder="Confirm Password"
-        placeholderTextColor="#A9A9A9"
         secureTextEntry={true}
+        value={confirmPassword}
+        onChangeText={(text) => setConfirmPassword(text)}
       />
       {/* Forget Password Text */}
       <TouchableOpacity style={styles.forgotPasswordContainer}>
