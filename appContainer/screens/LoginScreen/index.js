@@ -1,0 +1,101 @@
+import React from "react";
+import {
+  View,
+  Text,
+  Image,
+  TouchableOpacity,
+  StyleSheet,
+  Dimensions,
+} from "react-native";
+
+const windowWidth = Dimensions.get("window").width;
+
+export default function LoginScreen() {
+  return (
+    <View style={styles.container}>
+      {/* Image Section */}
+      <Image
+        source={{ uri: "https://example.com/your-image.png" }} // Replace with your image URL
+        style={styles.image}
+        resizeMode="contain"
+      />
+
+      {/* Text Section */}
+      <Text style={styles.heading}>
+        Join <Text style={styles.highlight}>E Learner</Text> To KickStart Your
+        Journey
+      </Text>
+      <Text style={styles.subheading}>
+        A learning game that boosts the human mind
+      </Text>
+
+      {/* Button Section */}
+      <View style={styles.buttonContainer}>
+        <TouchableOpacity style={styles.signInButton}>
+          <Text style={styles.buttonText}>SIGN IN</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.signUpButton}>
+          <Text style={styles.buttonText}>SIGN UP</Text>
+        </TouchableOpacity>
+      </View>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
+    paddingHorizontal: 20,
+  },
+  image: {
+    width: windowWidth * 0.8,
+    height: windowWidth * 0.5,
+    marginBottom: 30,
+  },
+  heading: {
+    fontSize: 24,
+    fontWeight: "bold",
+    color: "#000",
+    textAlign: "center",
+    marginBottom: 10,
+  },
+  highlight: {
+    color: "#A020F0", // Purple color
+  },
+  subheading: {
+    fontSize: 14,
+    color: "#888",
+    textAlign: "center",
+    marginBottom: 30,
+  },
+  buttonContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    width: "100%",
+  },
+  signInButton: {
+    flex: 1,
+    marginRight: 10,
+    paddingVertical: 12,
+    borderWidth: 2,
+    borderColor: "#A020F0", // Purple color
+    borderRadius: 5,
+    alignItems: "center",
+  },
+  signUpButton: {
+    flex: 1,
+    marginLeft: 10,
+    paddingVertical: 12,
+    borderWidth: 2,
+    borderColor: "#A020F0", // Purple color
+    borderRadius: 5,
+    alignItems: "center",
+  },
+  buttonText: {
+    color: "#A020F0", // Purple color
+    fontWeight: "bold",
+  },
+});
