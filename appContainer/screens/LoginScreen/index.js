@@ -7,31 +7,36 @@ import {
   StyleSheet,
   Dimensions,
 } from "react-native";
-
+import { useNavigation } from "@react-navigation/native";
 const windowWidth = Dimensions.get("window").width;
 
 export default function LoginScreen() {
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
       {/* Image Section */}
       <Image
-        source={{ uri: "https://example.com/your-image.png" }} // Replace with your image URL
+        source={require("../../../assets/Group 4.png")} // Replace with your image URL
         style={styles.image}
         resizeMode="contain"
       />
 
       {/* Text Section */}
       <Text style={styles.heading}>
-        Join <Text style={styles.highlight}>E Learner</Text> To KickStart Your
+        Join E <Text style={styles.highlight}>Learner</Text> To KickStart Your
         Journey
       </Text>
       <Text style={styles.subheading}>
-        A learning game that boosts the human mind
+        Lorem ipsum dolor sit amet consectetur. A at augue sit blandit
+        fermentum.
       </Text>
 
       {/* Button Section */}
       <View style={styles.buttonContainer}>
-        <TouchableOpacity style={styles.signInButton}>
+        <TouchableOpacity
+          style={styles.signInButton}
+          onPress={() => navigation.navigate("SignIn")} // Navigate to Sign In screen
+        >
           <Text style={styles.buttonText}>SIGN IN</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.signUpButton}>
@@ -56,7 +61,7 @@ const styles = StyleSheet.create({
     marginBottom: 30,
   },
   heading: {
-    fontSize: 24,
+    fontSize: 32,
     fontWeight: "bold",
     color: "#000",
     textAlign: "center",
@@ -66,10 +71,10 @@ const styles = StyleSheet.create({
     color: "#A020F0", // Purple color
   },
   subheading: {
-    fontSize: 14,
+    fontSize: 16,
     color: "#888",
     textAlign: "center",
-    marginBottom: 30,
+    marginBottom: 55,
   },
   buttonContainer: {
     flexDirection: "row",
@@ -95,7 +100,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   buttonText: {
-    color: "#A020F0", // Purple color
-    fontWeight: "bold",
+    fontSize: 24,
   },
 });
