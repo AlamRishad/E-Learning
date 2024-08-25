@@ -5,7 +5,7 @@ const StBarHeight = StatusBar.currentHeight;
 export const globalStyle = StyleSheet.create({
   container: {
     paddingTop: StBarHeight,
-    backgroundColor: "#EFF3FB",
+    backgroundColor: "white",
     zIndex: 1,
   },
   loader: {

@@ -39,12 +39,15 @@ export default function SignInScreen() {
       />
 
       {/* Forget Password Text */}
-      <TouchableOpacity style={styles.forgotPasswordContainer}>
+      <TouchableOpacity
+        style={styles.forgotPasswordContainer}
+        onPress={() => navigation.navigate("ResetPassword")}
+      >
         <Text style={styles.forgotPassword}>Forget Password?</Text>
       </TouchableOpacity>
 
       {/* Sign In Button */}
-      <TouchableOpacity style={styles.signInButton}>
+      <TouchableOpacity style={styles.signInButton}  onPress={() => navigation.navigate("MainApp")}>
         <Text style={styles.signInButtonText}>SIGN IN</Text>
       </TouchableOpacity>
 

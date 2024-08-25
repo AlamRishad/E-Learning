@@ -9,7 +9,7 @@ const windowHeight = Dimensions.get("window").height;
 
 export default function Index() {
   return (
-    <View style={{ height: windowHeight + 30 }}>
+    <View style={{ height: windowHeight + 50 }}>
       <NavigationContainer>
         <AppStackNavigator />
       </NavigationContainer>

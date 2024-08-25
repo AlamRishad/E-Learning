@@ -8,7 +8,7 @@ import {
   Dimensions,
 } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
-import CustomTextInput from "../../components/navigators/commonComponent/CustomTextInput";
+import CustomTextInput from "../../components/commonComponent/CustomTextInput";
 const windowWidth = Dimensions.get("window").width;
 
 export default function SignUpScreen() {
