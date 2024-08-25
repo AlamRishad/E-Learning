@@ -170,14 +170,16 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     backgroundColor: "rgba(24, 119, 242, 0.79)",
-    padding: 15,
+    padding: 20,
     borderRadius: 5,
     width: "100%",
     marginBottom: 15,
+    textAlign: "center",
+    justifyContent: "center",
   },
   socialButtonText: {
     color: "#fff",
-    fontSize: 16,
+    fontSize: 20,
     marginLeft: 10,
   },
   signUpContainer: {
