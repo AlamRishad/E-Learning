@@ -14,13 +14,15 @@ import { useNavigation } from "@react-navigation/native";
 import Settings from "../../../assets/homeScreenIcon/Settings";
 import Notification from "../../../assets/homeScreenIcon/NotificationIcon";
 import SearchIcon from "../../../assets/homeScreenIcon/Search";
+import CourseCard from "../../components/commonComponent/CourseCard";
 
 const windowWidth = Dimensions.get("window").width;
+const windowHeight = Dimensions.get("window").height;
 
 export default function HomeScreen() {
   const navigation = useNavigation();
   return (
-    <ScrollView style={{ ...styles.container, ...globalStyle.container }}>
+    <View style={{ ...styles.container, ...globalStyle.container }}>
       {/* Header */}
       <View style={styles.header}>
         <Text style={styles.welcomeText}>
@@ -60,59 +62,77 @@ export default function HomeScreen() {
       </View>
 
       {/* Continue Watching */}
-      <View style={styles.sectionHeader}>
-        <Text style={styles.sectionTitle}>Continue Watching</Text>
-        <Text style={styles.seeAll}>See All</Text>
-      </View>
-      <ScrollView horizontal style={styles.horizontalScroll}>
-        <View style={styles.courseCard}>
-          <View style={styles.courseImagePlaceholder} />
-          <Text style={styles.courseTitle}>Icon Design</Text>
-          <Text style={styles.courseAuthor}>By Tom Cruise</Text>
-          <Text style={styles.progressText}>70% DONE</Text>
-          <View style={styles.progressBar}>
-            <View style={styles.progress} />
-          </View>
+      <ScrollView
+        vertical
+        showsVerticalScrollIndicator={false}
+        style={styles.verticalScroll}
+      >
+        <View style={styles.sectionHeader}>
+          <Text style={styles.sectionTitle}>Continue Watching</Text>
+          <Text style={styles.seeAll}>See All</Text>
         </View>
+        <ScrollView
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          style={styles.horizontalScroll}
+        >
+          <CourseCard
+            title="Icon Design"
+            author="By Tom Cruise"
+            progress={70}
+            image={require("../../../assets/homeScreenIcon/IconDesignImage.png")} // Replace with the correct image path
+            stars={5}
+          />
+          <CourseCard
+            title="Wireframes"
+            author="By John Watson"
+            progress={30}
+            image={require("../../../assets/homeScreenIcon/WireFrames.png")} // Replace with the correct image path
+            stars={5}
+          />
+          <CourseCard
+            title="Wireframes"
+            author="By John Watson"
+            progress={30}
+            image={require("../../../assets/homeScreenIcon/WireFrames.png")} // Replace with the correct image path
+            stars={5}
+          />
+        </ScrollView>
 
-        <View style={styles.courseCard}>
-          <View style={styles.courseImagePlaceholder} />
-          <Text style={styles.courseTitle}>Wireframes</Text>
-          <Text style={styles.courseAuthor}>By John Watson</Text>
-          <Text style={styles.progressText}>30% DONE</Text>
-          <View style={styles.progressBar}>
-            <View style={[styles.progress, { width: "30%" }]} />
-          </View>
+        {/* My Courses */}
+        <View style={styles.sectionHeader}>
+          <Text style={styles.sectionTitle}>My Courses</Text>
+          <Text style={styles.seeAll}>See All</Text>
         </View>
+        <ScrollView
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          style={styles.horizontalScroll}
+        >
+          <CourseCard
+            title="App Design"
+            author="By Kim Salena"
+            progress={90}
+            image={require("../../../assets/homeScreenIcon/AppDesign.png")} // Replace with the correct image path
+            stars={5}
+          />
+          <CourseCard
+            title="UI UX Design"
+            author="By Taylor Swift"
+            progress={45}
+            image={require("../../../assets/homeScreenIcon/UIUXDesign.png")} // Replace with the correct image path
+            stars={5}
+          />
+          <CourseCard
+            title="UI UX Design"
+            author="By Taylor Swift"
+            progress={45}
+            image={require("../../../assets/homeScreenIcon/UIUXDesign.png")} // Replace with the correct image path
+            stars={5}
+          />
+        </ScrollView>
       </ScrollView>
-
-      {/* My Courses */}
-      <View style={styles.sectionHeader}>
-        <Text style={styles.sectionTitle}>My Courses</Text>
-        <Text style={styles.seeAll}>See All</Text>
-      </View>
-      <ScrollView horizontal style={styles.horizontalScroll}>
-        <View style={styles.courseCard}>
-          <View style={styles.courseImagePlaceholder} />
-          <Text style={styles.courseTitle}>App Design</Text>
-          <Text style={styles.courseAuthor}>By Kim Salena</Text>
-          <Text style={styles.progressText}>90% DONE</Text>
-          <View style={styles.progressBar}>
-            <View style={[styles.progress, { width: "90%" }]} />
-          </View>
-        </View>
-
-        <View style={styles.courseCard}>
-          <View style={styles.courseImagePlaceholder} />
-          <Text style={styles.courseTitle}>UI UX Design</Text>
-          <Text style={styles.courseAuthor}>By Taylor Swift</Text>
-          <Text style={styles.progressText}>45% DONE</Text>
-          <View style={styles.progressBar}>
-            <View style={[styles.progress, { width: "45%" }]} />
-          </View>
-        </View>
-      </ScrollView>
-    </ScrollView>
+    </View>
   );
 }
 
@@ -120,13 +140,17 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
-    padding: 16,
+    paddingTop: 5,
+    paddingRight: 16,
+    paddingBottom: 5,
+    paddingLeft: 16,
   },
   header: {
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
     marginBottom: 16,
+    paddingRight: windowWidth * 0.05,
   },
   welcomeText: {
     fontSize: 24,
@@ -167,14 +191,18 @@ const styles = StyleSheet.create({
     marginBottom: 16,
   },
   tag: {
-    backgroundColor: "#f5f5f5",
-    borderRadius: 20,
+    backgroundColor: "white",
+    borderRadius: 10,
     paddingVertical: 8,
     paddingHorizontal: 16,
     marginRight: 8,
+    borderWidth: 1,
+    borderColor: "#C6D0D7",
   },
   tagText: {
     color: "#000",
+    fontSize: 20,
+    fontWeight: "500",
   },
   sectionHeader: {
     flexDirection: "row",
@@ -183,51 +211,23 @@ const styles = StyleSheet.create({
     marginBottom: 8,
   },
   sectionTitle: {
-    fontSize: 18,
-    fontWeight: "bold",
+    fontSize: 20,
+    fontWeight: "700",
   },
   seeAll: {
     color: "#A349A4",
+    paddingRight: windowWidth * 0.05,
+    fontWeight: "400",
+    fontSize: 15,
+    color: "#8D8989",
   },
   horizontalScroll: {
     flexDirection: "row",
     marginBottom: 16,
   },
-  courseCard: {
-    width: 160,
-    marginRight: 16,
-  },
-  courseImagePlaceholder: {
-    width: "100%",
-    height: 100,
-    backgroundColor: "#f5f5f5",
-    borderRadius: 8,
-    marginBottom: 8,
-  },
-  courseTitle: {
-    fontSize: 16,
-    fontWeight: "bold",
-    marginBottom: 4,
-  },
-  courseAuthor: {
-    fontSize: 12,
-    color: "#888",
-    marginBottom: 4,
-  },
-  progressText: {
-    fontSize: 12,
-    color: "#A349A4",
-    marginBottom: 4,
-  },
-  progressBar: {
-    height: 4,
-    backgroundColor: "#e0e0e0",
-    borderRadius: 2,
-    overflow: "hidden",
-  },
-  progress: {
-    height: "100%",
-    width: "70%",
-    backgroundColor: "#A349A4",
+  verticalScroll: {
+    flexDirection: "column",
+    // marginBottom: windowHeight * 0.05,
+    // height:
   },
 });
