@@ -3,7 +3,7 @@ import { CardStyleInterpolators } from "@react-navigation/stack";
 import React, { useEffect } from "react";
 import BottomTabNavigator from "./BottomTabNavigator";
 import SignInScreen from "../../screens/signInScreen";
-import LoginScreen from "../../screens/LoginScreen";
+import LoginScreen from "../../screens/loginScreen";
 import SignUpScreen from "../../screens/signUpScreen";
 import { NavigationContainer } from "@react-navigation/native";
 import ResetPasswordScreen from "../../screens/resetPasswordScreen";

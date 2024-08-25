@@ -10,7 +10,9 @@ import {
 import { FontAwesome } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import CustomTextInput from "../../components/commonComponent/CustomTextInput";
+import GoogleIcon from "../../../assets/homeScreenIcon/GoogleIcon";
 const windowWidth = Dimensions.get("window").width;
+const windowHeight = Dimensions.get("window").height;
 
 export default function SignInScreen() {
   const navigation = useNavigation();
@@ -67,20 +69,26 @@ export default function SignInScreen() {
 
       {/* Sign In With Facebook */}
       <TouchableOpacity style={styles.socialButton}>
-        <FontAwesome name="facebook" size={24} color="white" />
-        <Text style={styles.socialButtonText}>Sign In With Facebook</Text>
+        <View style={styles.roundWhite}>
+          <View style={styles.roundIcon}>
+            <FontAwesome name="facebook" size={20} color="white" />
+          </View>
+        </View>
+        <View>
+          <Text style={styles.socialButtonText}>Sign In With Facebook</Text>
+        </View>
       </TouchableOpacity>
 
       {/* Sign In With Google */}
-      <TouchableOpacity style={styles.socialButton}>
-        <FontAwesome name="google" size={24} color="white" />
-        <Text style={styles.socialButtonText}>Sign In With Google</Text>
+      <TouchableOpacity style={styles.socialButtonGoogle}>
+        <GoogleIcon />
+        <Text style={styles.socialButtonTextGoogle}>Sign In With Google</Text>
       </TouchableOpacity>
 
       {/* Sign Up Link */}
       <View style={styles.signUpContainer}>
         <Text style={styles.signUpText}>
-          Don't Have An Account?{" "}
+          Don't Have An Account?
           <TouchableOpacity onPress={() => navigation.navigate("SignUp")}>
             <Text style={styles.signUpLink}>Sign Up Here</Text>
           </TouchableOpacity>
@@ -150,6 +158,22 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: "600",
   },
+  roundIcon: {
+    backgroundColor: "#1877F2",
+    height: 25,
+    width: 25,
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 40,
+  },
+  roundWhite: {
+    backgroundColor: "white",
+    width: 55,
+    height: 55,
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 30,
+  },
   dividerContainer: {
     flexDirection: "row",
     alignItems: "center",
@@ -170,27 +194,59 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     backgroundColor: "rgba(24, 119, 242, 0.79)",
-    padding: 20,
+    paddingTop: 10,
+    paddingBottom: 10,
+    paddingLeft: 20,
+    paddingRight: 20,
+
     borderRadius: 5,
     width: "100%",
     marginBottom: 15,
     textAlign: "center",
-    justifyContent: "center",
+    // justifyContent: "space",
   },
   socialButtonText: {
     color: "#fff",
-    fontSize: 20,
-    marginLeft: 10,
+    fontSize: 22,
+    marginLeft: 20,
+  },
+  socialButtonGoogle: {
+    backgroundColor: "white",
+    flexDirection: "row",
+    alignItems: "center",
+    paddingTop: 20,
+    paddingBottom: 20,
+    paddingLeft: 30,
+    paddingRight: 20,
+
+    borderRadius: 5,
+    width: "100%",
+    marginBottom: 15,
+    textAlign: "center",
+    borderWidth: 1,
+    borderColor: "#9E08AB",
+  },
+  socialButtonTextGoogle: {
+    color: "black",
+    fontSize: 22,
+    marginLeft: 30,
   },
   signUpContainer: {
-    marginTop: 20,
+    marginTop: 10,
+    textAlign: "center",
+    justifyContent: "center",
+    alignItems: "center",
   },
   signUpText: {
     color: "#A9A9A9",
     fontSize: 14,
+    alignItems: "center",
   },
   signUpLink: {
     color: "#A020F0", // Purple color
     fontWeight: "bold",
+    paddingLeft: 10,
+    paddingTop: 10,
+    alignItems: "center",
   },
 });
