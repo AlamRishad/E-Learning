@@ -26,11 +26,14 @@ const CustomTextInput = ({
 const styles = StyleSheet.create({
   input: {
     width: "100%",
-    padding: 15,
+    padding: 20,
     borderWidth: 1,
-    borderColor: "#A020F0", // Default purple border color
+    borderColor: "#9E08AB", // Default purple border color
     borderRadius: 5,
-    marginBottom: 20,
+    marginBottom: 12,
+
+    // marginLeft: 5,
+    // marginRight: 10,
     color: "#000",
   },
 });

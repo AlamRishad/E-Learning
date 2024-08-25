@@ -8,8 +8,8 @@ import {
   SafeAreaView,
   StyleSheet,
 } from "react-native";
-import HomeIcondisable from "../../../assets/bottomNavbarIcon/home.png";
-import HomeIcon from "../../../assets/bottomNavbarIcon/HomeDark.js";
+import HomeIcon from "../../../assets/bottomNavbarIcon/Home.js";
+import HomeDarkIcon from "../../../assets/bottomNavbarIcon/HomeDark.js";
 import MessageIcon from "../../../assets/bottomNavbarIcon/Message.js";
 
 import MessageDarkIcon from "../../../assets/bottomNavbarIcon/MessageDark.js";
@@ -74,7 +74,7 @@ const BottomTabNavigator = () => {
                   height: "90%",
                 }}
               >
-                {focused ? <HomeIcon /> : <HomeIcon />}
+                {focused ? <HomeIcon /> : <HomeDarkIcon />}
               </View>
             ),
           }}
