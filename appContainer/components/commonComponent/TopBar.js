@@ -29,6 +29,22 @@ const TopBar = ({ title }) => {
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => navigation.navigate("Notification")}
+            style={styles.activeIconPlaceholder}
+          >
+            <Notification />
+          </TouchableOpacity>
+        </View>
+      )}
+      {title == "Settings" && (
+        <View style={styles.headerIcons}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("Settings")}
+            style={styles.activeIconPlaceholder}
+          >
+            <Settings />
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("Notification")}
             style={styles.iconPlaceholder}
           >
             <Notification />
@@ -66,6 +82,16 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
   iconPlaceholder: {
+    width: 24,
+    height: 24,
+    backgroundColor: "#D9D9D9",
+    marginLeft: 16,
+    alignItems: "center",
+    justifyContent: "center",
+    border: 1,
+    borderRadius: 3,
+  },
+  activeIconPlaceholder: {
     width: 24,
     height: 24,
     backgroundColor: "rgba(224, 124, 214, 0.26)",
