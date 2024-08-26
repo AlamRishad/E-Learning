@@ -30,27 +30,27 @@ const notifications = [
   {
     type: "Transaction Completed",
     icon: <CompletedIcon />,
-    time: "11 mins ago",
+    time: "30 mins ago",
   },
   ,
   {
     type: "Transaction Completed",
     icon: <CompletedIcon />,
-    time: "11 mins ago",
-  },
-  ,
-  {
-    type: "Transaction Completed",
-    icon: <CompletedIcon />,
-
-    time: "11 mins ago",
+    time: "35 mins ago",
   },
   ,
   {
     type: "Transaction Completed",
     icon: <CompletedIcon />,
 
-    time: "11 mins ago",
+    time: "43 mins ago",
+  },
+  ,
+  {
+    type: "Transaction Completed",
+    icon: <CompletedIcon />,
+
+    time: "55 mins ago",
   },
 ];
 

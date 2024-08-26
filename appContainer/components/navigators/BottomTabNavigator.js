@@ -18,7 +18,7 @@ import CoursesDarkIcon from "../../../assets/bottomNavbarIcon/CoursesDark";
 import ProfileDarkIcon from "../../../assets/bottomNavbarIcon/ProfileDark";
 import ProfileIcon from "../../../assets/bottomNavbarIcon/Profile";
 import HomeScreen from "../../screens/homeScreen";
-import SignInScreen from "../../screens/signInScreen";
+import MyCoursesScreen from "../../screens/myCoursesScreen/index.js";
 import SignUpScreen from "../../screens/signUpScreen";
 import ResetPasswordScreen from "../../screens/resetPasswordScreen";
 import colors from "../../utils/Colors";
@@ -100,8 +100,8 @@ const BottomTabNavigator = () => {
           }}
         />
         <Tab.Screen
-          name="allReports"
-          component={SignUpScreen}
+          name="myCourses"
+          component={MyCoursesScreen}
           options={{
             tabBarLabel: ({ focused }) => <Text></Text>,
             tabBarIcon: ({ focused }) => (
