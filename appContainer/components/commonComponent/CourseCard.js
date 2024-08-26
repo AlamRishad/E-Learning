@@ -1,9 +1,31 @@
 import React from "react";
-import { View, Text, StyleSheet, Dimensions, Image } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  Dimensions,
+  Image,
+} from "react-native";
+import { useNavigation } from "@react-navigation/native";
+
 import StarIcon from "../../../assets/homeScreenIcon/Star";
 const CourseCard = ({ title, author, progress, image, stars }) => {
+  const navigation = useNavigation();
+  console.log(title);
   return (
-    <View style={styles.courseCard}>
+    <TouchableOpacity
+      style={styles.courseCard}
+      onPress={() =>
+        navigation.navigate("CourseDetails", {
+          title: title,
+          author: author,
+          progress: progress,
+          image: image,
+          stars: stars,
+        })
+      }
+    >
       <Image source={image} style={styles.courseImage} />
       {/* <View style={styles.courseImagePlaceholder} /> */}
       <View style={styles.courseTitleImage}>
@@ -20,7 +42,7 @@ const CourseCard = ({ title, author, progress, image, stars }) => {
       <View style={styles.progressBar}>
         <View style={[styles.progress, { width: `${progress}%` }]} />
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
