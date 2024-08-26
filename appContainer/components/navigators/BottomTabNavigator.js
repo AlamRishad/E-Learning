@@ -11,7 +11,7 @@ import {
 import HomeIcon from "../../../assets/bottomNavbarIcon/Home.js";
 import HomeDarkIcon from "../../../assets/bottomNavbarIcon/HomeDark.js";
 import MessageIcon from "../../../assets/bottomNavbarIcon/Message.js";
-
+import MessageScreen from "../../screens/messageScreen/index.js";
 import MessageDarkIcon from "../../../assets/bottomNavbarIcon/MessageDark.js";
 import CoursesIcon from "../../../assets/bottomNavbarIcon/courses";
 import CoursesDarkIcon from "../../../assets/bottomNavbarIcon/CoursesDark";
@@ -80,8 +80,8 @@ const BottomTabNavigator = () => {
           }}
         />
         <Tab.Screen
-          name="allProblems"
-          component={SignInScreen}
+          name="message"
+          component={MessageScreen}
           options={{
             tabBarLabel: ({ focused }) => <Text></Text>,
             tabBarIcon: ({ focused }) => (

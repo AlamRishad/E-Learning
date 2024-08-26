@@ -22,6 +22,7 @@ import LessonIcon from "../../../assets/courseDetailsIcon/Lesson";
 import CertificateIcon from "../../../assets/courseDetailsIcon/Certificate";
 import LessonDetails from "../../components/courseDetailsComponent/LessonDetails";
 import ReviewDetails from "../../components/courseDetailsComponent/ReviewDetails";
+
 const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;
 

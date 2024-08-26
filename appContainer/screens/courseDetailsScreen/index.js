@@ -177,7 +177,10 @@ const CourseDetailsScreen = ({ route }) => {
         {activeTab === "Lessons" && <LessonDetails />}
         {activeTab === "Reviews" && <ReviewDetails />}
       </ScrollView>
-      <TouchableOpacity style={styles.enrollButton}>
+      <TouchableOpacity
+        style={styles.enrollButton}
+        onPress={() => navigation.navigate("Payment")}
+      >
         <Text style={styles.enrollButtonText}>GET ENROLL</Text>
       </TouchableOpacity>
     </View>

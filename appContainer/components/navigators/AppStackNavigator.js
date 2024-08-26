@@ -8,6 +8,7 @@ import SignUpScreen from "../../screens/signUpScreen";
 import { NavigationContainer } from "@react-navigation/native";
 import ResetPasswordScreen from "../../screens/resetPasswordScreen";
 import CourseDetailsScreen from "../../screens/courseDetailsScreen";
+import PaymentScreen from "../../screens/paymentScreen";
 const Stack = createNativeStackNavigator();
 
 export default function AppStackNavigator() {
@@ -31,6 +32,7 @@ export default function AppStackNavigator() {
 
       <Stack.Screen name="MainApp" component={BottomTabNavigator} />
       <Stack.Screen name="CourseDetails" component={CourseDetailsScreen} />
+      <Stack.Screen name="Payment" component={PaymentScreen} />
     </Stack.Navigator>
   );
 }
