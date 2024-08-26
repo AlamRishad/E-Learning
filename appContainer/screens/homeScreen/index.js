@@ -29,12 +29,18 @@ export default function HomeScreen() {
           Welcome <Text style={styles.username}>sf29</Text>
         </Text>
         <View style={styles.headerIcons}>
-          <View style={styles.iconPlaceholder}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("Settings")}
+            style={styles.iconPlaceholder}
+          >
             <Settings />
-          </View>
-          <View style={styles.iconPlaceholder}>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("Notification")}
+            style={styles.iconPlaceholder}
+          >
             <Notification />
-          </View>
+          </TouchableOpacity>
         </View>
       </View>
 
