@@ -43,5 +43,5 @@ This project presents the UI design for an e-learning application. The design en
   - **Payment Completed**: Confirmation of successful payment.
 - **Continue to Lesson Button**: Redirects back to the Home Page.
 
-## Folder Structure
+
 
