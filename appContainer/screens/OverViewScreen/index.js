@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   StyleSheet,
   Dimensions,
+  ScrollView,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import StepIndicator from "../../components/paymentComponent/StepIndicator";
@@ -28,50 +29,52 @@ export default function OverviewScreen({ route }) {
     <View style={[styles.container, globalStyle.container]}>
       {/* Image Section */}
       <TopBar />
-      <StepIndicator activeStep={activeStep} />
-      <View style={styles.overViewContainer}>
-        <Text style={styles.title}>Overview</Text>
-        <Text style={styles.label}>
-          Name Of Lesson: <Text style={styles.value}>Mobile App UI/UX</Text>
-        </Text>
-      </View>
-      <View style={styles.courseInfoContainer}>
-        <View style={styles.courseInfoItem}>
-          <LessonIcon />
-          <Text style={styles.courseInfoText}>100+ Lessons</Text>
+      <ScrollView>
+        <StepIndicator activeStep={activeStep} />
+        <View style={styles.overViewContainer}>
+          <Text style={styles.title}>Overview</Text>
+          <Text style={styles.label}>
+            Name Of Lesson: <Text style={styles.value}>Mobile App UI/UX</Text>
+          </Text>
         </View>
-        <View style={styles.courseInfoItem}>
-          <WeekIcon />
-          <Text style={styles.courseInfoText}>7 Weeks</Text>
+        <View style={styles.courseInfoContainer}>
+          <View style={styles.courseInfoItem}>
+            <LessonIcon />
+            <Text style={styles.courseInfoText}>100+ Lessons</Text>
+          </View>
+          <View style={styles.courseInfoItem}>
+            <WeekIcon />
+            <Text style={styles.courseInfoText}>7 Weeks</Text>
+          </View>
+          <View style={styles.courseInfoItem}>
+            <CertificateIcon />
+            <Text style={styles.courseInfoText}>Certificate</Text>
+          </View>
+          <View style={styles.courseInfoItem}>
+            <OffIcon />
+            <Text style={styles.courseInfoText}>20% Off</Text>
+          </View>
         </View>
-        <View style={styles.courseInfoItem}>
-          <CertificateIcon />
-          <Text style={styles.courseInfoText}>Certificate</Text>
+        <View style={styles.details}>
+          <View style={styles.ratingSection}>
+            <Text>Course Rating: </Text>
+            {Array.from({ length: stars }).map((_, index) => (
+              <Text key={index} style={styles.star}>
+                ★
+              </Text>
+            ))}
+          </View>
+          <View style={styles.ratingSection}>
+            <Text>Course Time: </Text>
+            <Text>7 hour</Text>
+          </View>
+          <View style={styles.ratingSection}>
+            <Text>Name of Trainer: </Text>
+            <Text>{author}</Text>
+          </View>
         </View>
-        <View style={styles.courseInfoItem}>
-          <OffIcon />
-          <Text style={styles.courseInfoText}>20% Off</Text>
-        </View>
-      </View>
-      <View>
-        <View style={styles.ratingSection}>
-          <Text>Course Rating: </Text>
-          {Array.from({ length: stars }).map((_, index) => (
-            <Text key={index} style={styles.star}>
-              ★
-            </Text>
-          ))}
-        </View>
-        <View style={styles.ratingSection}>
-          <Text>Course Time: </Text>
-          <Text>7 hour</Text>
-        </View>
-        <View style={styles.ratingSection}>
-          <Text>Name of Trainer: </Text>
-          <Text>{author}</Text>
-        </View>
-      </View>
-      <PurchaseDetail />
+        <PurchaseDetail />
+      </ScrollView>
       <TouchableOpacity
         style={styles.enrollButton}
         onPress={() => navigation.navigate("Payment")}
@@ -103,7 +106,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   highlight: {
-    color: "#A020F0", // Purple color
+    color: "#A020F0",
   },
   subheading: {
     fontSize: 16,
@@ -154,6 +157,9 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "bold",
     color: "#000",
+  },
+  details: {
+    marginVertical: 25,
   },
   courseInfoContainer: {
     flexDirection: "row",

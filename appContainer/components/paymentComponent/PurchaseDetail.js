@@ -29,6 +29,7 @@ const styles = StyleSheet.create({
   container: {
     // padding: 20,
     // backgroundColor: "#fff",
+    marginBottom: 30,
   },
   purchaseDetail: {
     position: "absolute",
@@ -39,7 +40,7 @@ const styles = StyleSheet.create({
     zIndex: 1,
   },
   label: {
-    fontSize: 12,
+    fontSize: 13,
     fontWeight: "bold",
   },
   detailBox: {
@@ -48,13 +49,15 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     padding: 20,
     marginTop: 15,
+    paddingLeft: 50,
   },
   text: {
     fontSize: 16,
     marginBottom: 5,
   },
   boldText: {
-    fontWeight: "bold",
+    fontWeight: "700",
+    fontSize: 16,
   },
   finalPrice: {
     textAlign: "right",
