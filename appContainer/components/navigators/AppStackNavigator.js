@@ -11,6 +11,8 @@ import CourseDetailsScreen from "../../screens/courseDetailsScreen";
 import PaymentScreen from "../../screens/paymentScreen";
 import NotificationScreen from "../../screens/notificationScreen";
 import SettingsScreen from "../../screens/settingsScreen";
+import ConfirmationScreen from "../../screens/ConfirmationScreen";
+import OverviewScreen from "../../screens/OverViewScreen";
 const Stack = createNativeStackNavigator();
 
 export default function AppStackNavigator() {
@@ -34,7 +36,9 @@ export default function AppStackNavigator() {
 
       <Stack.Screen name="MainApp" component={BottomTabNavigator} />
       <Stack.Screen name="CourseDetails" component={CourseDetailsScreen} />
+      <Stack.Screen name="Overview" component={OverviewScreen} />
       <Stack.Screen name="Payment" component={PaymentScreen} />
+      <Stack.Screen name="Completed" component={ConfirmationScreen} />
       <Stack.Screen name="Notification" component={NotificationScreen} />
       <Stack.Screen name="Settings" component={SettingsScreen} />
     </Stack.Navigator>

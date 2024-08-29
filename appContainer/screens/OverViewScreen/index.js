@@ -19,9 +19,9 @@ import PurchaseDetail from "../../components/paymentComponent/PurchaseDetail";
 
 const windowWidth = Dimensions.get("window").width;
 
-export default function PaymentScreen({ route }) {
+export default function OverviewScreen({ route }) {
   const navigation = useNavigation();
-  const [activeStep, setActiveStep] = useState(2);
+  const [activeStep, setActiveStep] = useState(1);
   const { stars, author } = route.params || {};
 
   return (
@@ -74,7 +74,7 @@ export default function PaymentScreen({ route }) {
       <PurchaseDetail />
       <TouchableOpacity
         style={styles.enrollButton}
-        onPress={() => navigation.navigate("Completed")}
+        onPress={() => navigation.navigate("Payment")}
       >
         <Text style={styles.enrollButtonText}>Continue</Text>
       </TouchableOpacity>

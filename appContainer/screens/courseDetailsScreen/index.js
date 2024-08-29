@@ -179,7 +179,9 @@ const CourseDetailsScreen = ({ route }) => {
       </ScrollView>
       <TouchableOpacity
         style={styles.enrollButton}
-        onPress={() => navigation.navigate("Payment")}
+        onPress={() =>
+          navigation.navigate("Overview", { author: author, stars: stars })
+        }
       >
         <Text style={styles.enrollButtonText}>GET ENROLL</Text>
       </TouchableOpacity>
