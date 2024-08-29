@@ -19,9 +19,8 @@ import ProfileDarkIcon from "../../../assets/bottomNavbarIcon/ProfileDark";
 import ProfileIcon from "../../../assets/bottomNavbarIcon/Profile";
 import HomeScreen from "../../screens/homeScreen";
 import MyCoursesScreen from "../../screens/myCoursesScreen/index.js";
-import SignUpScreen from "../../screens/signUpScreen";
-import ResetPasswordScreen from "../../screens/resetPasswordScreen";
 import colors from "../../utils/Colors";
+import ProfileScreen from "../../screens/ProfileScreen/index.js";
 const windowHeight = Dimensions.get("window").height;
 const Tab = createBottomTabNavigator();
 
@@ -120,8 +119,8 @@ const BottomTabNavigator = () => {
           }}
         />
         <Tab.Screen
-          name="allReport"
-          component={ResetPasswordScreen}
+          name="profile"
+          component={ProfileScreen}
           options={{
             tabBarLabel: ({ focused }) => <Text></Text>,
             tabBarIcon: ({ focused }) => (

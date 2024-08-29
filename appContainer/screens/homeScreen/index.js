@@ -53,21 +53,23 @@ export default function HomeScreen() {
           placeholderTextColor="#C6D0D7"
         />
       </View>
-
-      {/* Tags */}
-      <View style={styles.tagsContainer}>
-        <TouchableOpacity style={styles.tag}>
-          <Text style={styles.tagText}>UI/UX</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.tag}>
-          <Text style={styles.tagText}>Website Design</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.tag}>
-          <Text style={styles.tagText}>Figma</Text>
-        </TouchableOpacity>
-      </View>
-
-      {/* Continue Watching */}
+      <ScrollView
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        style={styles.horizontalScroll}
+      >
+        <View style={styles.tagsContainer}>
+          <TouchableOpacity style={styles.tag}>
+            <Text style={styles.tagText}>UI/UX</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.tag}>
+            <Text style={styles.tagText}>Website Design</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.tag}>
+            <Text style={styles.tagText}>Figma</Text>
+          </TouchableOpacity>
+        </View>
+      </ScrollView>
       <ScrollView
         vertical
         showsVerticalScrollIndicator={false}
@@ -105,7 +107,6 @@ export default function HomeScreen() {
           />
         </ScrollView>
 
-        {/* My Courses */}
         <View style={styles.sectionHeader}>
           <Text style={styles.sectionTitle}>My Courses</Text>
           <Text style={styles.seeAll}>See All</Text>

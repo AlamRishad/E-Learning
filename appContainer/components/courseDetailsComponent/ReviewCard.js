@@ -6,7 +6,10 @@ const ReviewCard = ({ profileImage, name, role, description, stars }) => {
     <View style={styles.cardContainer}>
       <View style={styles.profile}>
         <View style={styles.profileSection}>
-          <Image source={profileImage} style={styles.profileImage} />
+          <Image
+            source={require("../../../assets/courseDetailsIcon/boy.png")}
+            style={styles.profileImage}
+          />
         </View>
         <View style={styles.contentSection}>
           <View style={styles.header}>

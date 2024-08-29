@@ -19,6 +19,7 @@ import LessonIcon from "../../../assets/courseDetailsIcon/Lesson";
 import CertificateIcon from "../../../assets/courseDetailsIcon/Certificate";
 import LessonDetails from "../../components/courseDetailsComponent/LessonDetails";
 import ReviewDetails from "../../components/courseDetailsComponent/ReviewDetails";
+import { globalStyle } from "../../utils/globalStyle";
 
 const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;
@@ -35,7 +36,7 @@ const CourseDetailsScreen = ({ route }) => {
   const navigation = useNavigation();
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, globalStyle.container]}>
       <ImageBackground
         source={image}
         style={styles.background}
@@ -52,11 +53,10 @@ const CourseDetailsScreen = ({ route }) => {
             <WishList />
           </TouchableOpacity>
         </View>
-        <View style={styles.content}>
-          <TouchableOpacity>
-            <PlayButtonIcon />
-          </TouchableOpacity>
-        </View>
+
+        <TouchableOpacity style={styles.content}>
+          <PlayButtonIcon />
+        </TouchableOpacity>
       </ImageBackground>
       <View style={styles.tabContainer}>
         <TouchableOpacity
@@ -193,7 +193,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "white",
-    marginTop: 50,
+    // marginTop: 50,
   },
   background: {
     justifyContent: "space-between",
@@ -219,6 +219,7 @@ const styles = StyleSheet.create({
   content: {
     justifyContent: "center",
     alignItems: "center",
+    padding: windowHeight * 0.1,
   },
   tabContainer: {
     flexDirection: "row",
