@@ -11,7 +11,10 @@ import { globalStyle } from "../../utils/globalStyle";
 import TopBar from "../../components/commonComponent/TopBar";
 const CourseCard = ({ image, title, instructor, progress, timeDone }) => (
   <View style={styles.card}>
-    <Image source={image} style={styles.image} />
+    <Image
+      source={require("../../../assets/myCoursesIcon/course1.png")}
+      style={styles.image}
+    />
     <View style={styles.textContainer}>
       <Text style={styles.title}>{title}</Text>
       <Text style={styles.instructor}>{instructor}</Text>
